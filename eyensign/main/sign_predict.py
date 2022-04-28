@@ -65,7 +65,7 @@ def predict(img_path):
 
     img = Image.open(img_path)
     img = img.resize((128,128))
-    img.show()
+    # img.show()
     img_arr = np.asarray(img)
     
     img_arr = img_arr/255
