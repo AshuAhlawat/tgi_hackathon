@@ -18,8 +18,8 @@ def main(request):
         
         result = predict(img_path)
         
-        return render(request, "image.html", {"image_form": None,  "result":result})
+        return render(request, "main.html", {"image_form": None,  "result":result})
     else:
         image_form = ImageForm()
 
-        return render(request, "image.html", {"image_form": image_form, "result":None})
+        return render(request, "main.html", {"image_form": image_form, "result":None})
