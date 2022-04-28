@@ -53,7 +53,7 @@ def predict(img_path):
 
     model = Model()
 
-    path = "./sign_model97.1.pth"
+    path = "./sign_model97.pth"
     try:
         if torch.cuda.is_available():
             model.load_state_dict(torch.load(path))
@@ -81,4 +81,4 @@ def predict(img_path):
     print("Prediction: ",img_cls[pred_index])
 
 
-predict("./val/Y/11.jpg")
+predict("./val/C/13.jpg")
