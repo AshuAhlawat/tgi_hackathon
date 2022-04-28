@@ -16,9 +16,23 @@
         <div class="text">
             <h1 class="head">Eye&Sine</h1>
             <p class="para">Convert Your picture into sign Language.</p>
-            <input type="image" placeholder="Email Address" class="inputbox">
+            <div>
+                {% if image_form %}
+                    <form action="" method="post"  enctype="multipart/form-data" class="cnn">
+                        {% csrf_token %}
+                        {{ image_form }}
+                        <input type="submit" value="Upload" class="inputbox">
+                    </form>
+                {% endif %}
+            </div>
+        
+            <img src="{{ img_path }}" alt="">
+            <div>
+                {% if  result %}
+                        {{ result }}
+                {% endif %}
+            </div>
             
-            <button class="button">Sign Up</button>
             <footer class="footer">
                 <div class="ico">
                     <i class="fab fa-twitter"></i>
