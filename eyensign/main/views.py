@@ -1,8 +1,25 @@
 from django.shortcuts import render
+from .forms import ImageForm
+from .sign_predict import predict
 
 # Create your views here.
 
 
 def main(request):
-    
-    return render(request, "main.html", {})
+    if request.method =="POST":        
+        form = ImageForm(request.POST, request.FILES)
+        try:
+            if form.is_valid():
+                form.save()
+        except:
+            pass
+
+        img_path ="./static/" + str(request.FILES["image_field"]).replace(" ", "_")
+        
+        result = predict(img_path)
+        
+        return render(request, "image.html", {"image_form": None,  "result":result})
+    else:
+        image_form = ImageForm()
+
+        return render(request, "image.html", {"image_form": image_form, "result":None})

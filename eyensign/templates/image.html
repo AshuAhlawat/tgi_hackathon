@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        {% if image_form %}
+            <form action="" method="post"  enctype="multipart/form-data" class="cnn">
+                {% csrf_token %}
+                {{ image_form }}
+                <input type="submit" value="Upload" class="submit">
+            </form>
+        {% endif %}
+    </div>
+
+    <img src="{{ img_path }}" alt="">
+    <div>
+        {% if  result %}
+                {{ result }}
+        {% endif %}
+    </div>
+    
+</body>
+</html>

@@ -5,7 +5,6 @@ def predict(img_path):
     import torch
     import torch.nn as nn
     from PIL import Image
-    import matplotlib.pyplot as plt
     import numpy as np
 
     class Model(nn.Module):
@@ -53,7 +52,7 @@ def predict(img_path):
 
     model = Model()
 
-    path = "./sign_model97.pth"
+    path = "./static/sign_model97.pth"
     try:
         if torch.cuda.is_available():
             model.load_state_dict(torch.load(path))
@@ -68,7 +67,6 @@ def predict(img_path):
     img = img.resize((128,128))
     img.show()
     img_arr = np.asarray(img)
-    plt.imshow(img_arr)
     
     img_arr = img_arr/255
     img_tsr = torch.Tensor([img_arr])
@@ -80,5 +78,4 @@ def predict(img_path):
     
     print("Prediction: ",img_cls[pred_index])
 
-
-predict("./val/C/13.jpg")
+    return img_cls[pred_index]
