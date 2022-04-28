@@ -1,67 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyeNsign</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="apple-touch-icon" href="data:image/png;base64,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">
-    <link rel="stylesheet"  href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <title>codedamn Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   <!-- Image and text -->
-<nav class="navbar navbar-light bg-white">
-    <a class="navbar-brand" href="#">
-      <img src="./src/eyesignIcon.jpeg" width="100 rem" height="60 rem" class="d-inline-block center align-center" alt="">
-     <b>EyeNsign</b> 
-    </a>
-  </nav> 
-  <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-     <button class="btn btn-outline-success" type="button">Image</button>
-      
-      <button class="btn btn-sm btn-outline-secondary" type="button">Live</button>
-    </form>
+    <div class="container">
+        <img src='./src/p1.jpeg' class="bgimg">
+        <div class="text">
+            <h1 class="head">Eye&Sine</h1>
+            <p class="para">Convert Your picture into sign Language.</p>
+            <input type="image" placeholder="Email Address" class="inputbox">
+            
+            <button class="button">Sign Up</button>
+            <footer class="footer">
+                <div class="ico">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-github"></i>
+                    <i class="far fa-envelope"></i>
+                </div>
+                <p class="foot">©Untitled. | Credits: Unsplash + HTML5 UP</p>
+            </footer>
 
-  </nav>
-  <div class="display-cover">
-    <video autoplay></video>
-    <canvas class="d-none"></canvas>
-
-    <div class="video-options">
-     
+        </div>
     </div>
-
-    <img class="screenshot-image d-none" alt="">
-
-    <div class="controls">
-
-        <button class="btn btn-info pause d-none" title="Pause"><i data-feather="pause"></i></button>
-        <button class="btn btn-outline-success screenshot d-none" title="ScreenShot"><i data-feather="image"></i></button>
-    </div>
-</div>
-<video src="" ></video>
-<br />
-<button id='flipCamera'>Flip</button>
 </body>
-<script>
-var front = false;
-var video = document.querySelector('video');
-document.getElementById('flipCamera').onclick = function() { front = !front; };
-var constraints = { video: { facingMode: (front? "user" : "environment"), width: 640, height: 480  } };
-navigator.mediaDevices.getUserMedia(constraints)
-.then(function(mediaStream) {
-video.srcObject = mediaStream;
-video.onloadedmetadata = function(e) {
-video.play();
-};
-})
-.catch(function(err) { console.log(err.name + ": " + err.message); })
-</script>
-</body>
+
 </html>
-<!--Youtube clone-->
