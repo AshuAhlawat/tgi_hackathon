@@ -43,7 +43,7 @@
         }
         
         .para {
-            color: grey;
+            color: white;
             font-size: 1.2em;
             line-height: 1.5em;
             margin-bottom: 1.5em;
@@ -51,23 +51,23 @@
         
         a {
             text-decoration: underline dotted 1px;
-            color: grey;
+            color: white;
         }
         
         .inputbox {
-            color: grey;
+            color: white;
             font-weight: 550;
-            border: 2px solid grey;
+            border: 2px solid white;
             border-radius: 5px;
             background: transparent;
             font-size: 16px;
             padding: 8px 10% 8px 10px;
-            margin: 8px 10% 8px 10px;
+          margin :1rem 0
         }
         
         .button {
             margin-left: 3%;
-            background-color: #1cb495;
+            background-color: #fff;
             text-align: center;
             border: none;
             border-radius: 6px;
@@ -79,7 +79,7 @@
         
         .footer {
             margin-top: 30%;
-            color: rgba(128, 128, 128, 0.486);
+            color: white;
         }
         
         .ico {
@@ -95,14 +95,57 @@
         .foot {
             font-size: 10px;
             font-weight: 550;
+
         }
+        #id_image_field{
+            border: 2px solid #6c5ce7;
+            color: white;
+
+  background-color: white;
+        }
+        label{
+            color:white;
+        }
+        .result{
+            color:white;
+            font-size: 32px;
+        }
+        .link-hyper{
+            color:white;
+            text-decoration: none;
+        }
+        a:link {
+  color: white;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: white;
+  text-decoration: none;
+}
     </style>
 </head>
 
 <body style="background-color: #000">
     <div class="container">
         <!-- <img src='../static/images.jpg' class="bgimg"> -->
-        <div class="text">
+        <script>
+            document.write('<a class="link-hyper" href="' + document.referrer + '">Go Back</a>');
+          </script>
+        <div class="text" >
             <h1 class="head">Eyensign</h1>
             <p class="para">Convert Your picture into sign Language.</p>
             <div>
@@ -114,22 +157,15 @@
                 {% endif %}
             </div>
 
-            <div>
+            <div class="result">
                 {% if result %} {{ result }} {% endif %}
             </div>
 
-            <footer class="footer">
-                <div class="ico">
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-github"></i>
-                    <i class="far fa-envelope"></i>
-                </div>
-                <!-- <p class="foot">©Untitled. | Credits: Unsplash + HTML5 UP</p> -->
-            </footer>
-
+        <div class="last-img">
+            <img src="https://www.researchgate.net/publication/319995966/figure/fig2/AS:541643679571968@1506149324394/American-Sign-Language-alphabet-community-used-including-letters-from-A-to-Y-excluding.png" alt="">
         </div>
-    </div>
+        </div>
+    
 </body>
 
 </html>
